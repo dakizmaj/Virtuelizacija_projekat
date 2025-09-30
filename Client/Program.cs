@@ -12,7 +12,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            var binding = new NetTcpBinding(SecurityMode.None);
+            var binding = new NetTcpBinding();
             var endpoint = new EndpointAddress("net.tcp://localhost:9000/BatteryService");
 
             var factory = new ChannelFactory<IBatteryService>(binding, endpoint);
@@ -72,10 +72,10 @@ namespace Client
             {
                 Console.WriteLine($"ValidationFault: {ex.Detail.Message}");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Neocekivana greska: {ex.Message}");
-            }
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Neocekivana greska: {ex.Message}");
+            //}
 
             Console.WriteLine("GOTOVO, pritisni ENTER za kraj...");
             Console.ReadLine();

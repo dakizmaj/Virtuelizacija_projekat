@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="EisMeta.cs" />
     <Compile Include="EisSample.cs" />
     <Compile Include="FaultContracts.cs" />
