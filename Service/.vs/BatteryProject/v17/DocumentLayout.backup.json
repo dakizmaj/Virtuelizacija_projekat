@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{175047E8-5629-4590-A7EF-A0EABD252C13}|..\\Client\\Client.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\common\\faultcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\common\\eissample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\common\\eismeta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\service\\batteryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:batteryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\common\\ibatteryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\service\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{175047E8-5629-4590-A7EF-A0EABD252C13}|..\\Client\\Client.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\client\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\common\\operationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FaultContracts.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\FaultContracts.cs",
+              "RelativeDocumentMoniker": "..\\Common\\FaultContracts.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\FaultContracts.cs",
+              "RelativeToolTip": "..\\Common\\FaultContracts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T18:23:08.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Client\\App.config",
+              "RelativeDocumentMoniker": "..\\Client\\App.config",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Client\\App.config",
+              "RelativeToolTip": "..\\Client\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-30T16:28:17.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-30T16:18:21.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BatteryService.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\BatteryService.cs",
+              "RelativeDocumentMoniker": "BatteryService.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\BatteryService.cs",
+              "RelativeToolTip": "BatteryService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAjwCsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T16:02:36.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IBatteryService.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\IBatteryService.cs",
+              "RelativeDocumentMoniker": "..\\Common\\IBatteryService.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\IBatteryService.cs",
+              "RelativeToolTip": "..\\Common\\IBatteryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T15:54:44.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OperationStatus.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\OperationStatus.cs",
+              "RelativeDocumentMoniker": "..\\Common\\OperationStatus.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\OperationStatus.cs",
+              "RelativeToolTip": "..\\Common\\OperationStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T15:52:49.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EisSample.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisSample.cs",
+              "RelativeDocumentMoniker": "..\\Common\\EisSample.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisSample.cs",
+              "RelativeToolTip": "..\\Common\\EisSample.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T15:50:05.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EisMeta.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisMeta.cs",
+              "RelativeDocumentMoniker": "..\\Common\\EisMeta.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisMeta.cs",
+              "RelativeToolTip": "..\\Common\\EisMeta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T15:46:01.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Client\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Client\\Program.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Client\\Program.cs",
+              "RelativeToolTip": "..\\Client\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAowEgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T19:52:15.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T19:49:35.459Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
