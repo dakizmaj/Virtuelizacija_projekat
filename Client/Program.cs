@@ -19,7 +19,7 @@ namespace Client
             var factory = new ChannelFactory<IBatteryService>(binding, endpoint);
             var proxy = factory.CreateChannel();
 
-            string basePath = @"C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Dataset"; /// ovde staviti putanju do svog dataset foldera
+            string basePath = @".\Dataset"; /// ovde staviti putanju do svog dataset foldera
             var logPath = Path.Combine(basePath, "log.txt");
 
             foreach(var file in Directory.GetFiles(basePath, "*.csv", SearchOption.AllDirectories))
