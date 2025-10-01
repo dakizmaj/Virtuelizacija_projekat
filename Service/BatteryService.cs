@@ -16,6 +16,8 @@ namespace Service
         private int recivedRows = 0;
         private int lastRowIndex = 0;
         public FileWriter fileWriter;
+        private FileWriter rejectsWriter;
+        private readonly string logFile = Path.Combine("Data", "server.log");
 
         public OperationStatus StartSession(EisMeta meta)
         {
@@ -34,8 +36,15 @@ namespace Service
                 Directory.CreateDirectory(folderPath);
             }
 
+            //session.csv
             string filePath = Path.Combine(folderPath, "session.csv");
             fileWriter = new FileWriter(filePath);
+
+            //rejects.csv
+            string rejectsPath = Path.Combine(folderPath, "rejects.csv");
+            rejectsWriter = new FileWriter(rejectsPath);
+
+            WriteLog($"Session STARTED for Battery={meta.BatteryID}, Test={meta.TestID}, SoC={meta.SoC}");
 
             return new OperationStatus
             {
@@ -48,33 +57,45 @@ namespace Service
         public OperationStatus PushSample(EisSample sample)
         {
             if (sample == null)
+            {
+                WriteReject("Sample je null.");
                 throw new FaultException<DataFormatFault>(
-                    new DataFormatFault { Message = "Sample je null."},
+                    new DataFormatFault { Message = "Sample je null." },
                     new FaultReason("Invalid sample."));
+            }
             if (sample.FrequencyHz <= 0)
+            {
+                WriteReject($"Nevalidna frekvencija: {sample.FrequencyHz}");
                 throw new FaultException<ValidationFault>(
                     new ValidationFault { Message = "FrequencyHz mora biti > 0." },
                     new FaultReason("Validation failed."));
+            }
 
             if (double.IsNaN(sample.R_Ohm)|| double.IsInfinity(sample.R_Ohm) ||
                 double.IsNaN(sample.X_Ohm)|| double.IsInfinity(sample.X_Ohm) ||
                 double.IsNaN(sample.V) || double.IsInfinity(sample.V))
             {
+                WriteReject($"Nevalidne vrednosti R:{sample.R_Ohm}, X:{sample.X_Ohm}, V:{sample.V}");
                 throw new FaultException<ValidationFault>(
                     new ValidationFault { Message = "R, X ili V nisu validne vrednosti."},
                     new FaultReason("Validation failed."));
             }
 
             if (sample.RowIndex <= lastRowIndex)
+            {
+                WriteReject($"Nevalidan RowIndex: {sample.RowIndex}, poslednji: {lastRowIndex}");
                 throw new FaultException<ValidationFault>(
                     new ValidationFault { Message = "RowIndex mora monotono rasti."},
                     new FaultReason("Validation failed."));
+            }
 
             lastRowIndex = sample.RowIndex;
             recivedRows++;
 
             string line = $"{sample.RowIndex},{sample.FrequencyHz},{sample.R_Ohm},{sample.X_Ohm},{sample.V},{sample.T_degC},{sample.Range_ohm}";
             fileWriter?.WriteLine(line);
+
+            WriteLog($"Sample {sample.RowIndex} ACCEPTED (Battery={currentSession.BatteryID}, Test={currentSession.TestID})");
 
             return new OperationStatus
             {
@@ -93,7 +114,13 @@ namespace Service
             fileWriter?.Dispose();
             fileWriter = null;
 
+            rejectsWriter?.Dispose();
+            rejectsWriter = null;
+
             var msg = $"Session completed. Recived {recivedRows}/{currentSession.TotalRows} rows.";
+
+            WriteLog($"Session ENDED for Battery={currentSession.BatteryID}, Test={currentSession.TestID}, SoC={currentSession.SoC}.");
+
 
             return new OperationStatus
             {
@@ -101,6 +128,17 @@ namespace Service
                 Message = msg,
                 Status = "COMPLETED"
             };
+        }
+        private void WriteReject(string reason)
+        {
+            string line = $"[{DateTime.UtcNow}] {reason}";
+            rejectsWriter?.WriteLine(line);
+        }
+        private void WriteLog(string message)
+        {
+            string line = $"[{DateTime.UtcNow}] {message}";
+            File.AppendAllText(logFile, line + Environment.NewLine);
+            Console.WriteLine(line);
         }
     }
 }
