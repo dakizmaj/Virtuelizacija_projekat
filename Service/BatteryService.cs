@@ -63,15 +63,15 @@ namespace Service
                     new DataFormatFault("Sample je null."),
                     new FaultReason("Invalid sample.")
                 );
-
-            if (sample.FrequencyHz <= 0)
-            {
-                WriteReject($"Nevalidna frekvencija: {sample.FrequencyHz}");
-                throw new FaultException<ValidationFault>(
-                    new ValidationFault("FrequencyHz mora biti > 0."),
-                    new FaultReason("Validation failed.")
-                );
-
+            }
+                if (sample.FrequencyHz <= 0)
+                {
+                    WriteReject($"Nevalidna frekvencija: {sample.FrequencyHz}");
+                    throw new FaultException<ValidationFault>(
+                        new ValidationFault("FrequencyHz mora biti > 0."),
+                        new FaultReason("Validation failed.")
+                    );
+                }
             bool isResistanceOk = double.IsNaN(sample.R_Ohm) || double.IsInfinity(sample.R_Ohm);
             bool isImpendanceOk = double.IsNaN(sample.X_Ohm) || double.IsInfinity(sample.X_Ohm);
             bool isVoltageOk = double.IsNaN(sample.V) || double.IsInfinity(sample.V);
@@ -84,18 +84,18 @@ namespace Service
                 );
             }
 
-            if (sample.RowIndex <= lastRowIndex)
-            {
-                WriteReject($"Nevalidan RowIndex: {sample.RowIndex}, poslednji: {lastRowIndex}");
-                throw new FaultException<ValidationFault>(
-                    new ValidationFault("RowIndex mora monotono rasti."),
-                    new FaultReason("Validation failed.")
-                );
-
+                if (sample.RowIndex <= lastRowIndex)
+                {
+                    WriteReject($"Nevalidan RowIndex: {sample.RowIndex}, poslednji: {lastRowIndex}");
+                    throw new FaultException<ValidationFault>(
+                        new ValidationFault("RowIndex mora monotono rasti."),
+                        new FaultReason("Validation failed.")
+                    );
+                }
             lastRowIndex = sample.RowIndex;
             recivedRows++;
 
-            string line = $"{sample.RowIndex},{sample.FrequencyHz},{sample.R_Ohm},{sample.X_Ohm},{sample.V},{sample.T_degC},{sample.Range_ohm}";
+            string line = $"{sample.RowIndex};{sample.FrequencyHz};{sample.R_Ohm};{sample.X_Ohm};{sample.V};{sample.T_degC};{sample.Range_ohm}";
             fileWriter?.WriteLine(line);
 
             WriteLog($"Sample {sample.RowIndex} ACCEPTED (Battery={currentSession.BatteryID}, Test={currentSession.TestID})");
