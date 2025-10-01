@@ -23,7 +23,7 @@ namespace Service
         {
             if (meta == null || string.IsNullOrEmpty(meta.BatteryID) || string.IsNullOrEmpty(meta.TestID))
                 throw new FaultException<DataFormatFault>(
-                    new DataFormatFault { Message = "Meta podaci nisu ispravni."},
+                    new DataFormatFault("Meta podaci nisu ispravni."),
                     new FaultReason("Invalid meta data."));
 
             currentSession = meta;
@@ -60,34 +60,37 @@ namespace Service
             {
                 WriteReject("Sample je null.");
                 throw new FaultException<DataFormatFault>(
-                    new DataFormatFault { Message = "Sample je null." },
-                    new FaultReason("Invalid sample."));
-            }
+                    new DataFormatFault("Sample je null."),
+                    new FaultReason("Invalid sample.")
+                );
+
             if (sample.FrequencyHz <= 0)
             {
                 WriteReject($"Nevalidna frekvencija: {sample.FrequencyHz}");
                 throw new FaultException<ValidationFault>(
-                    new ValidationFault { Message = "FrequencyHz mora biti > 0." },
-                    new FaultReason("Validation failed."));
-            }
+                    new ValidationFault("FrequencyHz mora biti > 0."),
+                    new FaultReason("Validation failed.")
+                );
 
-            if (double.IsNaN(sample.R_Ohm)|| double.IsInfinity(sample.R_Ohm) ||
-                double.IsNaN(sample.X_Ohm)|| double.IsInfinity(sample.X_Ohm) ||
-                double.IsNaN(sample.V) || double.IsInfinity(sample.V))
+            bool isResistanceOk = double.IsNaN(sample.R_Ohm) || double.IsInfinity(sample.R_Ohm);
+            bool isImpendanceOk = double.IsNaN(sample.X_Ohm) || double.IsInfinity(sample.X_Ohm);
+            bool isVoltageOk = double.IsNaN(sample.V) || double.IsInfinity(sample.V);
+            if (isResistanceOk || isImpendanceOk || isVoltageOk)
             {
                 WriteReject($"Nevalidne vrednosti R:{sample.R_Ohm}, X:{sample.X_Ohm}, V:{sample.V}");
                 throw new FaultException<ValidationFault>(
-                    new ValidationFault { Message = "R, X ili V nisu validne vrednosti."},
-                    new FaultReason("Validation failed."));
+                    new ValidationFault("R, X ili V nisu validne vrednosti."),
+                    new FaultReason("Validation failed.")
+                );
             }
 
             if (sample.RowIndex <= lastRowIndex)
             {
                 WriteReject($"Nevalidan RowIndex: {sample.RowIndex}, poslednji: {lastRowIndex}");
                 throw new FaultException<ValidationFault>(
-                    new ValidationFault { Message = "RowIndex mora monotono rasti."},
-                    new FaultReason("Validation failed."));
-            }
+                    new ValidationFault("RowIndex mora monotono rasti."),
+                    new FaultReason("Validation failed.")
+                );
 
             lastRowIndex = sample.RowIndex;
             recivedRows++;
