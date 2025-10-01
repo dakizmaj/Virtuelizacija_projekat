@@ -3,8 +3,11 @@
 *.vs
 *.exe
 
-Client/bin
+#Client/bin
 Client/obj
+Client/bin/Debug/net8.0
+Client/bin/Debug/Commom.pdb
+Client/bin/Debug/Client.exe.config
 
 Common/bin
 Common/obj
