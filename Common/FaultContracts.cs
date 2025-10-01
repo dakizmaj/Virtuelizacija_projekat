@@ -11,8 +11,16 @@ namespace Common
     [DataContract]
     public class DataFormatFault
     {
-        [DataMember] public string Message { get; set; }
-        public DataFormatFault() { }
+        string message;
+        [DataMember] public string Message
+        {
+            get => message;
+            set => message = value;
+        }
+        public DataFormatFault()
+        {
+            Message = string.Empty;
+        }
         public DataFormatFault(string message)
         {
             Message = message;
@@ -22,8 +30,16 @@ namespace Common
     [DataContract]
     public class ValidationFault
     {
-        [DataMember] public string Message { get; set; }
-        public ValidationFault() { }
+        string message;
+        [DataMember] public string Message
+        {
+            get => message;
+            set => message = value;
+        }
+        public ValidationFault()
+        {
+            Message = string.Empty;
+        }
         public ValidationFault(string message)
         {
             Message = message;
