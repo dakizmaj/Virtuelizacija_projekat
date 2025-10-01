@@ -1,1 +1,22 @@
 *.cache
+*.dll
+*.vs
+*.exe
+
+#Client/bin
+Client/obj
+Client/bin/Debug/net8.0
+Client/bin/Debug/Commom.pdb
+Client/bin/Debug/Client.exe.config
+
+Common/bin
+Common/obj
+
+#Service/bin
+Service/obj
+
+# ovo ovde je dok se ne nadje resenje za datasetove
+Service/bin/Debug/net8.0
+Service/bin/Debug/Common.pdb
+Service/bin/Debug/Service.pdb
+Service/bin/Debug/Service.exe.config
