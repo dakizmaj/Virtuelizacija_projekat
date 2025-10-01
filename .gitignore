@@ -7,6 +7,8 @@
 Client/obj
 Client/bin/Debug/net8.0
 Client/bin/Debug/Commom.pdb
+Client/bin/Debug/Common.pdb
+Client/bin/Debug/Client.pdb
 Client/bin/Debug/Client.exe.config
 
 Common/bin
