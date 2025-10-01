@@ -1,6 +1,0 @@
-C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Virtuelizacija_projekat\Common\bin\Debug\Common.dll
-C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Virtuelizacija_projekat\Common\bin\Debug\Common.pdb
-C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Virtuelizacija_projekat\Common\obj\Debug\Common.csproj.AssemblyReference.cache
-C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Virtuelizacija_projekat\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
-C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Virtuelizacija_projekat\Common\obj\Debug\Common.dll
-C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Virtuelizacija_projekat\Common\obj\Debug\Common.pdb
