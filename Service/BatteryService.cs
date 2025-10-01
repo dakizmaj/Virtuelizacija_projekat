@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
@@ -95,7 +96,16 @@ namespace Service
             lastRowIndex = sample.RowIndex;
             recivedRows++;
 
-            string line = $"{sample.RowIndex};{sample.FrequencyHz};{sample.R_Ohm};{sample.X_Ohm};{sample.V};{sample.T_degC};{sample.Range_ohm}";
+            //string line = $"{sample.RowIndex},{sample.FrequencyHz},{sample.R_Ohm},{sample.X_Ohm},{sample.V},{sample.T_degC},{sample.Range_ohm}";
+            string line = string.Format(CultureInfo.InvariantCulture, "{0},{1},{2},{3},{4},{5},{6}",
+                sample.RowIndex,
+                sample.FrequencyHz,
+                sample.R_Ohm,
+                sample.X_Ohm,
+                sample.V,
+                sample.T_degC,
+                sample.Range_ohm
+            );
             fileWriter?.WriteLine(line);
 
             WriteLog($"Sample {sample.RowIndex} ACCEPTED (Battery={currentSession.BatteryID}, Test={currentSession.TestID})");
