@@ -111,8 +111,9 @@ namespace Service
         {
             if (currentSession == null)
                 throw new FaultException<DataFormatFault>(
-                    new DataFormatFault { Message = "Session nije zapocet." },
-                    new FaultReason("EndSession called before StartSession."));
+                    new DataFormatFault("Session nije zapocet."),
+                    new FaultReason("EndSession called before StartSession.")
+                );
 
             fileWriter?.Dispose();
             fileWriter = null;
