@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -14,6 +15,7 @@ namespace Service
         private EisMeta currentSession;
         private int recivedRows = 0;
         private int lastRowIndex = 0;
+        public FileWriter fileWriter;
 
         public OperationStatus StartSession(EisMeta meta)
         {
@@ -25,6 +27,15 @@ namespace Service
             currentSession = meta;
             recivedRows = 0;
             lastRowIndex = 0;
+
+            string folderPath = Path.Combine("Data", meta.BatteryID, meta.TestID, $"{meta.SoC}");
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            string filePath = Path.Combine(folderPath, "session.csv");
+            fileWriter = new FileWriter(filePath);
 
             return new OperationStatus
             {
@@ -62,7 +73,9 @@ namespace Service
             lastRowIndex = sample.RowIndex;
             recivedRows++;
 
-            // Ovde kasnije ide validacija (3. zadatak)
+            string line = $"{sample.RowIndex},{sample.FrequencyHz},{sample.R_Ohm},{sample.X_Ohm},{sample.V},{sample.T_degC},{sample.Range_ohm}";
+            fileWriter?.WriteLine(line);
+
             return new OperationStatus
             {
                 Success = true,
@@ -76,6 +89,10 @@ namespace Service
                 throw new FaultException<DataFormatFault>(
                     new DataFormatFault { Message = "Session nije zapocet." },
                     new FaultReason("EndSession called before StartSession."));
+
+            fileWriter?.Dispose();
+            fileWriter = null;
+
             var msg = $"Session completed. Recived {recivedRows}/{currentSession.TotalRows} rows.";
 
             return new OperationStatus

@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -18,64 +19,73 @@ namespace Client
             var factory = new ChannelFactory<IBatteryService>(binding, endpoint);
             var proxy = factory.CreateChannel();
 
-            try
+            string basePath = @"C:\Users\DARKO\Desktop\Virtuelizacija\Projekat\Dataset"; /// ovde staviti putanju do svog dataset foldera
+            var logPath = Path.Combine(basePath, "log.txt");
+
+            foreach(var file in Directory.GetFiles(basePath, "*.csv", SearchOption.AllDirectories))
             {
-                //Start session
-                var meta = new EisMeta
+                try
                 {
-                    BatteryID = "B01",
-                    TestID = "Test_1",
-                    SoC = 20,
-                    FileName = "20.csv",
-                    TotalRows = 28
-                };
-                var start = proxy.StartSession(meta);
-                Console.WriteLine($"StartSession: {start.Message}");
+                    string fileName = Path.GetFileNameWithoutExtension(file);
 
-                var goodSample = new EisSample
+                    string[] parts = fileName.Split(new[] { "_SoC_" }, StringSplitOptions.None);
+                    string batteryId = parts[0];
+
+                    string[] socAndTest = parts[1].Split('_');
+                    int soc = int.Parse(socAndTest[0]);
+
+                    string testId = socAndTest.Length > 1 ? socAndTest[1] : "Test";
+
+                    var samples = CsvReader.ReadSamples(file).ToList();
+
+                    // Start session
+                    var meta = new EisMeta
+                    {
+                        BatteryID = batteryId,
+                        TestID = testId,
+                        SoC = soc,
+                        FileName = Path.GetFileName(file),
+                        TotalRows = samples.Count
+                    };
+
+                    var start = proxy.StartSession(meta);
+                    Console.WriteLine($"StartSession: {start.Message}");
+
+                    // Slanje uzoraka
+                    foreach (var sample in samples)
+                    {
+                        var push = proxy.PushSample(sample);
+                        Console.WriteLine($"PushSample: {push.Message}");
+                    }
+
+                    // End session
+                    var end = proxy.EndSession();
+                    Console.WriteLine($"EndSession: {end.Message}");
+
+                    // Ako broj redova nije 28 -> log
+                    if (samples.Count != 28)
+                    {
+                        File.AppendAllText(logPath, $"{file}: ocekivano 28 redova, pronadjeno {samples.Count}\n");
+                    }
+                }
+                catch (FaultException<DataFormatFault> ex)
                 {
-                    FrequencyHz = 1000,
-                    R_Ohm = 0.01,
-                    X_Ohm = 0.002,
-                    V = 3.7,
-                    T_degC = 25,
-                    Range_ohm = 1,
-                    RowIndex = 1
-                };
-
-                var push = proxy.PushSample(goodSample);
-                Console.WriteLine($"PushSample: {push.Message}");
-
-                // Nevalidan sample (namerno greska: FrequencyHz <0)
-                var badSample = new EisSample
+                    File.AppendAllText(logPath, $"{file}: DataFormatFault - {ex.Detail.Message}\n");
+                }
+                catch (FaultException<ValidationFault> ex)
                 {
-                    FrequencyHz = -1,
-                    R_Ohm = 0.01,
-                    X_Ohm = 0.002,
-                    V = 3.7,
-                    T_degC = 25,
-                    Range_ohm = 1,
-                    RowIndex = 2
-                };
-                var pushBad = proxy.PushSample(badSample);
-                Console.WriteLine($"PushSample: {pushBad.Message}");
-
-                // End Session
-                var end = proxy.EndSession();
-                Console.WriteLine($"EndSession: {end.Message}");
+                    File.AppendAllText(logPath, $"{file}: ValidationFault - {ex.Detail.Message}\n");
+                }
+                catch (FaultException ex)
+                {
+                    File.AppendAllText(logPath, $"{file}: FaultException - {ex.Message}\n");
+                }
+                catch (Exception ex)
+                {
+                    File.AppendAllText(logPath, $"{file}: Exception - {ex.Message}\n");
+                }
             }
-            catch (FaultException<DataFormatFault> ex)
-            {
-                Console.WriteLine($"DataFormatFault: {ex.Detail.Message}");
-            }
-            catch (FaultException<ValidationFault> ex)
-            {
-                Console.WriteLine($"ValidationFault: {ex.Detail.Message}");
-            }
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine($"Neocekivana greska: {ex.Message}");
-            //}
+            
 
             Console.WriteLine("GOTOVO, pritisni ENTER za kraj...");
             Console.ReadLine();

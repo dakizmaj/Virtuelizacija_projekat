@@ -45,8 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BatteryService.cs" />
+    <Compile Include="FileWriter.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ServiceContract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
