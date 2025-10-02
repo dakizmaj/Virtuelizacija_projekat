@@ -8,7 +8,6 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
 
 
 namespace Service
@@ -25,7 +24,7 @@ namespace Service
     }
     public class WarningEventArgs : EventArgs
     {
-        public string WarningType { get; set; }//VoltageSpike, ImpendanceJump,OutOfBand,Reject
+        public string WarningType { get; set; } // VoltageSpike, ImpendanceJump, OutOfBand, Reject
         public string Message { get; set; }
         public EisSample Sample { get; set; }
     }
@@ -42,8 +41,9 @@ namespace Service
         private int recivedRows = 0;
         private int lastRowIndex = 0;
 
-        private readonly double V_TRESHOLD = double.NaN;
-        private readonly double Z_TRESHOLD = double.NaN;
+        private readonly double V_THRESHOLD = double.NaN;
+        private readonly double Z_THRESHOLD = double.NaN;
+        private readonly double PERCENTAGE_THRESHOLD; // 0.25 = 25%
         private double lastReadVoltage = double.NaN;
         private double lastReadImpendance = double.NaN;
         private double impendanceSum = 0.0;
@@ -51,10 +51,6 @@ namespace Service
 
         public FileWriter fileWriter;
         private FileWriter rejectsWriter;
-
-
-        //thresholds (iz app.config)
-        private readonly double PERCENTAGE_THRESHOLD; //0.25 = 25%
 
         // global server log
         private readonly string logFile = Path.Combine("Data", "server.log");
@@ -69,8 +65,8 @@ namespace Service
             double.TryParse(ConfigurationManager.AppSettings["Z_Threshold"], out zthr);
             double.TryParse(ConfigurationManager.AppSettings["PercentThreshold"], out pct);
 
-            V_TRESHOLD = vthr;
-            Z_TRESHOLD = zthr;
+            V_THRESHOLD = vthr;
+            Z_THRESHOLD = zthr;
             PERCENTAGE_THRESHOLD = pct;
 
             // Internal default subscriptions for logging + console notifications
@@ -194,13 +190,13 @@ namespace Service
             if (!double.IsNaN(lastReadVoltage))
             {
                 double delta = sample.V - lastReadVoltage;
-                if (Math.Abs(delta) > V_TRESHOLD)
+                if (Math.Abs(delta) > V_THRESHOLD)
                 {
                     string dir = delta > 0 ? "Iznad ocekivanog" : "Ispod ocekivanog";
                     //podigni warning dogadjaj, ali nemoj automatski odbaciti sample
-                    string msg = $"VoltageSpike deltaV = {delta:F6} (smer: {dir}), Threshold={V_TRESHOLD}";
+                    string msg = $"VoltageSpike: deltaV = {delta:F6} (smer: {dir}), Threshold={V_THRESHOLD}";
                     OnWarningRaised?.Invoke(this, new WarningEventArgs { WarningType = "VoltageSpike", Message = msg, Sample = sample });
-                    WriteLog();
+                    WriteLog(msg);
                 }
             }
 
@@ -212,11 +208,11 @@ namespace Service
             // Provera da li ima skoka u impendansi
             if (!double.IsNaN(lastReadImpendance))
             {
-                double delta = impendance - lastReadVoltage;
-                if (Math.Abs(delta) > Z_TRESHOLD)
+                double delta = impendance - lastReadImpendance;
+                if (Math.Abs(delta) > Z_THRESHOLD)
                 {
                     string dir = delta > 0 ? "Iznad ocekivanog" : "Ispod ocekivanog";
-                    string msg = $"ImpendanceJump: deltaZ = {delta:F6} (smer: {dir}), Threshold={Z_TRESHOLD}";
+                    string msg = $"ImpendanceJump: deltaZ = {delta:F6} (smer: {dir}), Threshold={Z_THRESHOLD}";
                     OnWarningRaised?.Invoke(this, new WarningEventArgs { WarningType = "ImpedanceJump", Message = msg, Sample = sample });
                     WriteLog(msg);
                 }
@@ -233,15 +229,6 @@ namespace Service
                 double lower = (1.0 - PERCENTAGE_THRESHOLD) * runningMean;
                 double upper = (1.0 + PERCENTAGE_THRESHOLD) * runningMean;
 
-                // if (runningMean * 0.75 > impendance)
-                // {
-                //     Console.WriteLine("OutOfBandWarning: ispod");
-                // }
-                // else if (runningMean * 1.25 < impendance)
-                // {
-                //     Console.WriteLine("OutOfBandWarning: iznad");
-                // }
-
                 if (lower > impendance || impendance > upper)
                 {
                     string dir = impendance < lower ? "Ispod ocekivanog" : "Iznad ocekivanog";
@@ -257,9 +244,6 @@ namespace Service
             OnSampleRecived?.Invoke(this, new SampleEventArgs { Sample = sample, RecivedRows = recivedRows });
 
             WriteLog($"Sample {sample.RowIndex} ACCEPTED (Battery={currentSession.BatteryID}, Test={currentSession.TestID})");
-
-            lastV = sample.V;
-            lastZ = Z;
 
             return new OperationStatus
             {
@@ -411,30 +395,6 @@ namespace Service
             Directory.CreateDirectory(Path.GetDirectoryName(logFile) ?? "Data");
             File.AppendAllText(logFile, line + Environment.NewLine);
             Console.WriteLine(line);
-        }
-
-
-
-        private void LoadThresholds()
-        {
-            double val;
-            bool result;
-            string key = ConfigurationManager.AppSettings["V_treshold"];
-
-            result = double.TryParse(key, out val);
-            if (result == false)
-                // Ovako je uradjeno da ne radimo zadatak 9 uopste sa losim unosima
-                throw new AppDomainUnloadedException("V_treshold could not be read");
-
-            V_TRESHOLD = val;
-
-            key = ConfigurationManager.AppSettings["Z_treshold"];
-            result = double.TryParse(key, out val);
-            if (result == false)
-                // Ovako je uradjeno da ne radimo zadatak 10 uopste sa losim unosima
-                throw new AppDomainUnloadedException("Z_treshold could not be read");
-
-            Z_TRESHOLD = val;
         }
     }
 }
