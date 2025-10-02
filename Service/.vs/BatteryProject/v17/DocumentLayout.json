@@ -3,37 +3,41 @@
   "WorkspaceRootPath": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\service\\batteryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\batteryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:batteryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\filewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:filewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{175047E8-5629-4590-A7EF-A0EABD252C13}|..\\Client\\Client.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\IBatteryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{175047E8-5629-4590-A7EF-A0EABD252C13}|..\\Client\\Client.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{175047E8-5629-4590-A7EF-A0EABD252C13}|..\\Client\\Client.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\client\\csvreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\service\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\FaultContracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\filewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB96A559-9E9A-4164-9923-CB574FD006A2}|Service.csproj|solutionrelative:filewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\OperationStatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisMeta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisSample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisMeta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\common\\faultcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\OperationStatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3D20D94-250D-4AEE-9806-17477691A259}|..\\Common\\Common.csproj|C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\IBatteryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{175047E8-5629-4590-A7EF-A0EABD252C13}|..\\Client\\Client.csproj|c:\\users\\darko\\desktop\\virtuelizacija\\projekat\\virtuelizacija_projekat\\client\\csvreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,11 +47,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-10-01T23:06:35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "CsvReader.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Client\\CsvReader.cs",
               "RelativeDocumentMoniker": "..\\Client\\CsvReader.cs",
@@ -59,28 +76,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "FileWriter.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\FileWriter.cs",
               "RelativeDocumentMoniker": "FileWriter.cs",
               "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\FileWriter.cs",
               "RelativeToolTip": "FileWriter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T21:52:01.31Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "FaultContracts.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\FaultContracts.cs",
               "RelativeDocumentMoniker": "..\\Common\\FaultContracts.cs",
               "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\FaultContracts.cs",
               "RelativeToolTip": "..\\Common\\FaultContracts.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T18:23:08.509Z"
+              "WhenOpened": "2025-09-30T18:23:08.509Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -90,39 +108,38 @@
               "RelativeDocumentMoniker": "BatteryService.cs",
               "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\BatteryService.cs",
               "RelativeToolTip": "BatteryService.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAASwHkAAACEAAAAAAAAAA==",
+              "ViewState": "AgIAALMAAAAAAAAAAAAjwMkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T16:02:36.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "IBatteryService.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\IBatteryService.cs",
               "RelativeDocumentMoniker": "..\\Common\\IBatteryService.cs",
               "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\IBatteryService.cs",
               "RelativeToolTip": "..\\Common\\IBatteryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T15:54:44.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-30T15:54:44.428Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "OperationStatus.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\OperationStatus.cs",
               "RelativeDocumentMoniker": "..\\Common\\OperationStatus.cs",
               "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\OperationStatus.cs",
               "RelativeToolTip": "..\\Common\\OperationStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T15:52:49.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "EisSample.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisSample.cs",
               "RelativeDocumentMoniker": "..\\Common\\EisSample.cs",
@@ -130,11 +147,12 @@
               "RelativeToolTip": "..\\Common\\EisSample.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T15:50:05.74Z"
+              "WhenOpened": "2025-09-30T15:50:05.74Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "EisMeta.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Common\\EisMeta.cs",
               "RelativeDocumentMoniker": "..\\Common\\EisMeta.cs",
@@ -142,7 +160,8 @@
               "RelativeToolTip": "..\\Common\\EisMeta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T15:46:01.327Z"
+              "WhenOpened": "2025-09-30T15:46:01.327Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -152,20 +171,20 @@
               "RelativeDocumentMoniker": "..\\Client\\Program.cs",
               "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Client\\Program.cs",
               "RelativeToolTip": "..\\Client\\Program.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAADwvzoAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-28T19:52:15.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\DARKO\\Desktop\\Virtuelizacija\\Projekat\\Virtuelizacija_projekat\\Service\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-28T19:49:35.459Z",
               "EditorCaption": ""
